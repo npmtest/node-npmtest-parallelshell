@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-parallelshell/parallelshell/index.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-parallelshell/node_modules/parallelshell/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-parallelshell">npmtest-parallelshell (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-parallelshell/parallelshell/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-parallelshell/node_modules/parallelshell/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">20.9% <small>(14 / 67)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-parallelshell/parallelshell/</a> &#187; index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-parallelshell/node_modules/parallelshell/</a> » index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -456,88 +454,88 @@ var sh, shFlag, children, args, wait, cmds, verbose, i ,len;
 cmds = [];
 args = process.argv.slice(2);
 for (i = 0, len = args.length; i &lt; len; i++) {
-<span class="cstat-no" title="statement not covered" >    if (args[i][0] === '-') {</span>
-<span class="cstat-no" title="statement not covered" >        switch (args[i]) {</span>
+<span class="cstat-no" title="statement not covered">    if (args[i][0] === '-') {</span>
+<span class="cstat-no" title="statement not covered">        switch (args[i]) {</span>
             case '-w':
             case '--wait':
-<span class="cstat-no" title="statement not covered" >                wait = true;</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+<span class="cstat-no" title="statement not covered">                wait = true;</span>
+<span class="cstat-no" title="statement not covered">                break;</span>
             case '-v':
             case '--verbose':
-<span class="cstat-no" title="statement not covered" >                verbose = true;</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+<span class="cstat-no" title="statement not covered">                verbose = true;</span>
+<span class="cstat-no" title="statement not covered">                break;</span>
             case '-h':
             case '--help':
-<span class="cstat-no" title="statement not covered" >                console.log('-h, --help         output usage information');</span>
-<span class="cstat-no" title="statement not covered" >                console.log('-v, --verbose      verbose logging')</span>
-<span class="cstat-no" title="statement not covered" >                console.log('-w, --wait         will not close sibling processes on error')</span>
-<span class="cstat-no" title="statement not covered" >                process.exit();</span>
-<span class="cstat-no" title="statement not covered" >                break;</span>
+<span class="cstat-no" title="statement not covered">                console.log('-h, --help         output usage information');</span>
+<span class="cstat-no" title="statement not covered">                console.log('-v, --verbose      verbose logging')</span>
+<span class="cstat-no" title="statement not covered">                console.log('-w, --wait         will not close sibling processes on error')</span>
+<span class="cstat-no" title="statement not covered">                process.exit();</span>
+<span class="cstat-no" title="statement not covered">                break;</span>
         }
     } else {
-<span class="cstat-no" title="statement not covered" >        cmds.push(args[i]);</span>
+<span class="cstat-no" title="statement not covered">        cmds.push(args[i]);</span>
     }
 }
 &nbsp;
 // called on close of a child process
-<span class="fstat-no" title="function not covered" >function childClose (code) {</span>
-<span class="cstat-no" title="statement not covered" >    var i, len;</span>
-<span class="cstat-no" title="statement not covered" >    code = code ? (code.code || code) : code;</span>
-<span class="cstat-no" title="statement not covered" >    if (verbose) {</span>
-<span class="cstat-no" title="statement not covered" >        if (code &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >            console.error('`' + this.cmd + '` failed with exit code ' + code);</span>
+<span class="fstat-no" title="function not covered">function childClose (code) {</span>
+<span class="cstat-no" title="statement not covered">    var i, len;</span>
+<span class="cstat-no" title="statement not covered">    code = code ? (code.code || code) : code;</span>
+<span class="cstat-no" title="statement not covered">    if (verbose) {</span>
+<span class="cstat-no" title="statement not covered">        if (code &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">            console.error('`' + this.cmd + '` failed with exit code ' + code);</span>
         } else {
-<span class="cstat-no" title="statement not covered" >            console.log('`' + this.cmd + '` ended successfully');</span>
+<span class="cstat-no" title="statement not covered">            console.log('`' + this.cmd + '` ended successfully');</span>
         }
     }
-<span class="cstat-no" title="statement not covered" >    if (code &gt; 0 &amp;&amp; !wait) <span class="cstat-no" title="statement not covered" >close(code);</span></span>
-<span class="cstat-no" title="statement not covered" >    status();</span>
+<span class="cstat-no" title="statement not covered">    if (code &gt; 0 &amp;&amp; !wait) <span class="cstat-no" title="statement not covered">close(code);</span></span>
+<span class="cstat-no" title="statement not covered">    status();</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered" >function status () {</span>
-<span class="cstat-no" title="statement not covered" >    if (verbose) {</span>
-<span class="cstat-no" title="statement not covered" >        var i, len;</span>
-<span class="cstat-no" title="statement not covered" >        console.log('\n');</span>
-<span class="cstat-no" title="statement not covered" >        console.log('### Status ###');</span>
-<span class="cstat-no" title="statement not covered" >        for (i = 0, len = children.length; i &lt; len; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            if (children[i].exitCode === null) {</span>
-<span class="cstat-no" title="statement not covered" >                console.log('`' + children[i].cmd + '` is still running');</span>
-            } else <span class="cstat-no" title="statement not covered" >if (children[i].exitCode &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >                console.log('`' + children[i].cmd + '` errored');</span>
+<span class="fstat-no" title="function not covered">function status () {</span>
+<span class="cstat-no" title="statement not covered">    if (verbose) {</span>
+<span class="cstat-no" title="statement not covered">        var i, len;</span>
+<span class="cstat-no" title="statement not covered">        console.log('\n');</span>
+<span class="cstat-no" title="statement not covered">        console.log('### Status ###');</span>
+<span class="cstat-no" title="statement not covered">        for (i = 0, len = children.length; i &lt; len; i++) {</span>
+<span class="cstat-no" title="statement not covered">            if (children[i].exitCode === null) {</span>
+<span class="cstat-no" title="statement not covered">                console.log('`' + children[i].cmd + '` is still running');</span>
+            } else <span class="cstat-no" title="statement not covered">if (children[i].exitCode &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">                console.log('`' + children[i].cmd + '` errored');</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                console.log('`' + children[i].cmd + '` finished');</span>
+<span class="cstat-no" title="statement not covered">                console.log('`' + children[i].cmd + '` finished');</span>
             }
         }
-<span class="cstat-no" title="statement not covered" >        console.log('\n');</span>
+<span class="cstat-no" title="statement not covered">        console.log('\n');</span>
     }
 }
 &nbsp;
 // closes all children and the process
-<span class="fstat-no" title="function not covered" >function close (code) {</span>
-<span class="cstat-no" title="statement not covered" >    var i, len, closed = 0, opened = 0;</span>
+<span class="fstat-no" title="function not covered">function close (code) {</span>
+<span class="cstat-no" title="statement not covered">    var i, len, closed = 0, opened = 0;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    for (i = 0, len = children.length; i &lt; len; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        if (!children[i].exitCode) {</span>
-<span class="cstat-no" title="statement not covered" >            opened++;</span>
-<span class="cstat-no" title="statement not covered" >            children[i].removeAllListeners('close');</span>
-<span class="cstat-no" title="statement not covered" >            children[i].kill("SIGINT");</span>
-<span class="cstat-no" title="statement not covered" >            if (verbose) <span class="cstat-no" title="statement not covered" >console.log('`' + children[i].cmd + '` will now be closed');</span></span>
-<span class="cstat-no" title="statement not covered" >            children[i].on('close', <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >                closed++;</span>
-<span class="cstat-no" title="statement not covered" >                if (opened == closed) {</span>
-<span class="cstat-no" title="statement not covered" >                    process.exit(code);</span>
+<span class="cstat-no" title="statement not covered">    for (i = 0, len = children.length; i &lt; len; i++) {</span>
+<span class="cstat-no" title="statement not covered">        if (!children[i].exitCode) {</span>
+<span class="cstat-no" title="statement not covered">            opened++;</span>
+<span class="cstat-no" title="statement not covered">            children[i].removeAllListeners('close');</span>
+<span class="cstat-no" title="statement not covered">            children[i].kill("SIGINT");</span>
+<span class="cstat-no" title="statement not covered">            if (verbose) <span class="cstat-no" title="statement not covered">console.log('`' + children[i].cmd + '` will now be closed');</span></span>
+<span class="cstat-no" title="statement not covered">            children[i].on('close', <span class="fstat-no" title="function not covered">function() {</span></span>
+<span class="cstat-no" title="statement not covered">                closed++;</span>
+<span class="cstat-no" title="statement not covered">                if (opened == closed) {</span>
+<span class="cstat-no" title="statement not covered">                    process.exit(code);</span>
                 }
             });
         }
     }
-<span class="cstat-no" title="statement not covered" >    if (opened == closed) {<span class="cstat-no" title="statement not covered" >process.exit(code);}</span></span>
+<span class="cstat-no" title="statement not covered">    if (opened == closed) {<span class="cstat-no" title="statement not covered">process.exit(code);}</span></span>
 &nbsp;
 }
 &nbsp;
 // cross platform compatibility
-<span class="missing-if-branch" title="if path not taken" >I</span>if (process.platform === 'win32') {
-<span class="cstat-no" title="statement not covered" >    sh = 'cmd';</span>
-<span class="cstat-no" title="statement not covered" >    shFlag = '/c';</span>
+<span class="missing-if-branch" title="if path not taken">I</span>if (process.platform === 'win32') {
+<span class="cstat-no" title="statement not covered">    sh = 'cmd';</span>
+<span class="cstat-no" title="statement not covered">    shFlag = '/c';</span>
 } else {
     sh = 'sh';
     shFlag = '-c';
@@ -545,28 +543,29 @@ for (i = 0, len = args.length; i &lt; len; i++) {
 &nbsp;
 // start the children
 children = [];
-cmds.forEach(<span class="fstat-no" title="function not covered" >function (cmd) {</span>
-<span class="cstat-no" title="statement not covered" >    if (process.platform != 'win32') {</span>
-<span class="cstat-no" title="statement not covered" >      cmd = "exec "+cmd;</span>
+cmds.forEach(<span class="fstat-no" title="function not covered">function (cmd) {</span>
+<span class="cstat-no" title="statement not covered">    if (process.platform != 'win32') {</span>
+<span class="cstat-no" title="statement not covered">      cmd = "exec "+cmd;</span>
     }
-<span class="cstat-no" title="statement not covered" >    var child = spawn(sh,[shFlag,cmd], {</span>
+<span class="cstat-no" title="statement not covered">    var child = spawn(sh,[shFlag,cmd], {</span>
         cwd: process.cwd,
         env: process.env,
         stdio: ['pipe', process.stdout, process.stderr]
     })
     .on('close', childClose);
-<span class="cstat-no" title="statement not covered" >    child.cmd = cmd</span>
-<span class="cstat-no" title="statement not covered" >    children.push(child)</span>
+<span class="cstat-no" title="statement not covered">    child.cmd = cmd</span>
+<span class="cstat-no" title="statement not covered">    children.push(child)</span>
 });
 &nbsp;
 // close all children on ctrl+c
 process.on('SIGINT', close)
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 14:57:25 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 19 2017 08:08:13 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
